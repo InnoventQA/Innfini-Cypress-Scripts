@@ -1,0 +1,78 @@
+Add these to the support->command.js file 
+
+
+
+
+
+
+
+// cypress/support/commands.js
+Cypress.Commands.add('login', () => {
+    const username = 'root'; // Save your username
+    const password = 'Inn0vent!'; // Save your password
+
+    cy.visit('http://139.59.151.223:5173/');
+    cy.get('#username').type(username);
+    cy.get('#password').type(password);
+    cy.get("button[type='submit']").click();
+    cy.url().should('eq', 'http://139.59.151.223:5173/home');
+});
+
+Cypress.Commands.add('HomeNavigator', () => {
+    const username = 'root'; // Save your username
+    const password = 'Inn0vent!'; // Save your password
+
+    cy.visit('http://139.59.151.223:5173/');
+    cy.get('#username').type(username);
+    cy.get('#password').type(password);
+    cy.get("button[type='submit']").click();
+    cy.url().should('eq', 'http://139.59.151.223:5173/home');
+
+    cy.xpath('//*[@id="root"]/div[3]/div/main/div[1]/aside/div/div[1]/div[1]/div/h1/div').click();
+    
+});
+
+Cypress.Commands.add('ThingNavigator', () => {
+    const username = 'root'; // Save your username
+    const password = 'Inn0vent!'; // Save your password
+
+    cy.visit('http://139.59.151.223:5173/');
+    cy.get('#username').type(username);
+    cy.get('#password').type(password);
+    cy.get("button[type='submit']").click();
+    cy.url().should('eq', 'http://139.59.151.223:5173/home');
+
+    cy.xpath('//*[@id="root"]/div[3]/header/div/header/div/div/ul/li[2]/span').click();
+    cy.xpath('//*[@id="root"]/div[3]/div/main/div[1]/aside/div/div[1]/div[1]/div/h1/div/img').click();
+    
+});
+
+Cypress.Commands.add('TenantNavigator', () => {
+    const username = 'root'; // Save your username
+    const password = 'Inn0vent!'; // Save your password
+
+    cy.visit('http://139.59.151.223:5173/');
+    cy.get('#username').type(username);
+    cy.get('#password').type(password);
+    cy.get("button[type='submit']").click();
+    cy.url().should('eq', 'http://139.59.151.223:5173/home');
+
+    cy.xpath('//*[@id="root"]/div[3]/header/div/header/div/div/ul/li[3]').click();
+    cy.xpath('//*[@id="root"]/div[3]/div/main/div[1]/aside/div/div[1]/div[1]/div/h1').click();
+    
+});
+
+Cypress.Commands.add('ModelNavigator', () => {
+    const username = 'root'; // Save your username
+    const password = 'Inn0vent!'; // Save your password
+ 
+    cy.visit('http://139.59.151.223:5173/');
+    cy.get('#username').type(username);
+    cy.get('#password').type(password);
+    cy.get("button[type='submit']").click();
+    cy.url().should('eq', 'http://139.59.151.223:5173/home');
+ 
+    cy.xpath('//*[@id="root"]/div[3]/header/div/header/div/div/ul/li[5]/span').click();
+    cy.xpath('//*[@id="root"]/div[3]/div/main/div[1]/aside/div/div[1]/div[1]/div/h1/div/img').click();
+   
+});
